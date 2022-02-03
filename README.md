@@ -10,7 +10,7 @@ Built Rails Cinema Seats Booking to practice on ROR. The project has multi roles
 
 ## Demo
 
-
+https://user-images.githubusercontent.com/64032541/152366201-e60aa4fd-cf92-42dc-aae7-b6bd87f0a125.mp4
 
 
 
