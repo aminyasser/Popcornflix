@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Popcornflix</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+   
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"><link rel="stylesheet" href="css/boxicons.min.css">
+     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  
+
+ <%
+=begin%>
+ <p class="notice"><%= notice %></p> 
+<%
+=end%>
+ <% if alert%>
+    <div class="alert alert-danger"><%= alert %>
+  </div> 
+  <% end %>
+
+    <%= yield %>
+   
+  </body>
+ 
+</html>

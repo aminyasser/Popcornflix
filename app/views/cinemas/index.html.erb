@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cinemas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Image</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cinemas.each do |cinema| %>
+      <tr>
+        <td><%= cinema.name %></td>
+        <td><% if cinema.image.attached?%>
+    <%= image_tag cinema.image , style: "width:50px; display:block"%>
+    <% end %></td>
+        <td><%= link_to 'Add Movie', add_movie_path(cinema.id) %></td>
+        <td><%= link_to 'Show', cinema %></td>
+        <td><%= link_to 'Edit', edit_cinema_path(cinema) %></td>
+        <td><%= link_to 'Destroy', cinema, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cinema', new_cinema_path %>

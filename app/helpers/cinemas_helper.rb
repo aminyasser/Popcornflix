@@ -1,0 +1,2 @@
+module CinemasHelper
+end

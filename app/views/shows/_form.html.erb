@@ -1,0 +1,37 @@
+<%= form_with(model: show) do |form| %>
+  <% if show.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(show.errors.count, "error") %> prohibited this show from being saved:</h2>
+
+      <ul>
+        <% show.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :cinema_id %>
+    <%= form.collection_select :cinema_id , Cinema.all , :id , :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :movie_id %>
+    <%= form.collection_select :movie_id , Movie.all , :id , :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :time %>
+    <%= form.datetime_select :time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

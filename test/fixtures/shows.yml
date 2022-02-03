@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cinema: one
+  movie: one
+  time: 2021-12-28 19:51:45
+  price: 1
+
+two:
+  cinema: two
+  movie: two
+  time: 2021-12-28 19:51:45
+  price: 1

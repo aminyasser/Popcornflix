@@ -1,0 +1,38 @@
+<%= form_with(model: seat) do |form| %>
+     <div class="col-md-12 text-center">
+    <% 1.upto(12) do |i| %>
+    <label  for=<%="seat#{i}"%> class="seat" name="seats[]" ></label>
+    <%= check_box_tag "seat#{i}", "#{i}",false, name:"seats[]" %> 
+    <% end %>
+    </div>
+    <div class="col-md-12 text-center">
+    <% 13.upto(24) do |i| %>
+    <label  for=<%="seat#{i}"%> class="seat" name="seats[]" ></label>
+    <%= check_box_tag "seat#{i}", "#{i}",false, name:"seats[]" %> 
+    <% end %>
+    </div>
+    <div class="col-md-12 text-center">  
+    <% 25.upto(36) do |i| %>
+    <label  for=<%="seat#{i}"%> class="seat" name="seats[]" ></label>
+    <%= check_box_tag "seat#{i}" , "#{i}",false, name:"seats[]" %> 
+    <% end %>
+    </div>
+     <div class="col-md-12 text-center">
+    <% 37.upto(48) do |i| %>
+    <label  for=<%="seat#{i}"%> class="seat" name="seats[]" ></label>
+    <%= check_box_tag "seat#{i}", "#{i}",false, name:"seats[]" %> 
+    <% end %>
+    </div>
+    
+   
+        <%= form.hidden_field :show_id , value: @show.id %>
+
+        </div>
+        </div>
+    <span class="seat-final-span d-inline-block mt-2">You have selected 
+    <span id="num" class="seat-price"> 0 seats </span>
+    with <span id="price" class="seat-price"> 0 LE</span>  price </span>
+    <p class='py-5'>
+    <%= form.submit "Book Ticket Now!" ,id: "book" , class: 'header-btn btn-seat' %>
+    </p>
+<% end %>

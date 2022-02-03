@@ -1,0 +1,76 @@
+<%= stylesheet_link_tag "bootstrap.min" %>
+<%= stylesheet_link_tag "seats" %>
+
+    <section id="login">
+
+            <div class="container">
+                            
+                        <div class="row flex-column align-items-center">
+                            <div class="col-md-12 div-height">
+                                <div class="steps-con">
+                                        <div class="d-flex">
+    
+                                            <div class="steps p-2 form-active m-auto">
+                                            
+                                                <span class="step-title text-center">Choose Your Seats</span>
+                                                
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                    <div class="mb-2 text-center">
+
+                                <%# <img class="show-img " src="assets/img/movies/<?php echo $movie->img; ?> " alt=""> %>
+                                <h2 class="show-title"> <%= @show.movie.name %> Movie</h2>
+                                <span class="show-span"> <%= @show.cinema.name %> </span>
+                                    </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="container container-mine " 
+                                data-price="<%= @show.price %>"
+                                data-occ = "<%=@occ_seats.to_json%>"
+                                data-your = "<%=@your_seats.to_json%>">
+
+                                    
+                                        <ul class="showcase">
+                                            <li>
+                                              <div class="seat-li"></div>
+                                              <small>N/A</small>
+                                            </li>
+                                            <li>
+                                              <div class="seat selected-li"></div>
+                                              <small>Selected</small>
+                                            </li>
+                                            <li>
+                                              <div class="seat occupied"></div>
+                                              <small>Occupied</small>
+                                            </li>
+                                            <li>
+                                              <div class="seat yours"></div>
+                                              <small>Yours</small>
+                                            </li>
+                                          </ul>
+                                          <div class="seats-con py-3 text-center">
+                                        <div class="screen"> </div>
+                                        <div class="row">
+                                        <%# row and seats-con end inside the form %>
+                                        <%= render 'seatsForm', seat: @seat %>
+                                        </div>
+                            </div>
+                            
+                        </div>
+            </div>
+
+
+
+
+
+    </section>
+
+<%= javascript_tag "var obj = #{@occ.to_json}"%>
+<%= javascript_pack_tag 'seats' %>
+
+      <script>
+          
+      </script>

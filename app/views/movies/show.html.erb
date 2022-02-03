@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @movie.name %>
+</p>
+
+<p>
+  <strong>Img:</strong>
+  <% if @movie.image.attached?%>
+    <%= image_tag @movie.image , style: "width:50px; display:block"%>
+    <% end %>
+</p>
+
+<hr>
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back', movies_path %>

@@ -1,0 +1,30 @@
+<%= form_with(model: cinema) do |form| %>
+  <% if cinema.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cinema.errors.count, "error") %> prohibited this cinema from being saved:</h2>
+
+      <ul>
+        <% cinema.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <% if cinema.image.attached?%>
+    <%= image_tag cinema.image%>
+    <% end %>
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+  
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

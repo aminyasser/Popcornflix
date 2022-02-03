@@ -1,0 +1,144 @@
+
+<%= stylesheet_link_tag "style" %>
+<script>
+function redirect(id) {
+    window.location.href = `/cinema/${id}`;
+   
+}
+</script>
+
+<%
+=begin%>
+ <h1> All Available Cinemas </h1>
+
+<% @cinemas.each do |cinema| %>
+    
+        <i><%= cinema.name %></i>
+        <i><%= link_to 'Show', user_cinema_path(cinema.id)  %></i>
+    
+<% end %> 
+<%
+=end%>
+
+  <header>
+        <a href="#" class="logo">
+            <i class='bx bx-movie'></i>
+            Popcornflix
+        </a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <!-- Menu -->
+        <ul class="navbar">
+            <li>
+                <a href="#home" class="active">Home</a>
+            </li>
+            <li>
+                <a href="#cinemas">Cinemas</a>
+            </li>
+            <li>
+                <a href="#newsletter">Newsletter</a>
+            </li>
+        </ul>
+        <% if user_signed_in?%>
+        <%= link_to "Logout" , destroy_user_session_path , class: "btn" , method: :delete %> 
+        <% else %>
+        <%= link_to "Sign In" , new_user_session_path , class: "btn" %> 
+        <% end %>
+    </header>
+
+    <!-- Home -->
+    <section class="home swiper" id="home">
+        <div class="swiper-wrapper">
+            <!-- BOX 1  -->
+            <div class="swiper-slide container">
+                <%= image_tag "cinema1.jpg"%>
+                <div class="home-text">
+                    <span>Find your happiness with us</span>
+                    <h1>
+                        We offer you: <br> Privacy
+                    </h1>
+                    <a href="#" class="btn">Book Now</a>
+                    <a href="#" class="play">
+                        <i class='bx bx-play bx-fade-left' ></i>
+                    </a>
+                </div>
+            </div>
+            <!-- BOX 2 -->
+            <div class="swiper-slide container">
+                <%= image_tag "cinema2.jpg"%>
+                <div class="home-text">
+                    <span>Find your happiness with us</span>
+                    <h1>
+                        We offer you: <br> Entertainment
+                    </h1>
+                    <a href="#" class="btn">Book Now</a>
+                    <a href="#" class="play">
+                        <i class='bx bx-play bx-fade-left' ></i>
+                    </a>
+                </div>
+            </div>
+            <!-- BOX 3 -->
+            <div class="swiper-slide container">
+                <%= image_tag "cinema3.jpg"%>
+                <div class="home-text">
+                    <span>Find your happiness with us</span>
+                    <h1>
+                        We offer you: <br> Nostalgia
+                    </h1>
+                    <a href="#" class="btn">Book Now</a>
+                    <a href="#" class="play">
+                        <i class='bx bx-play bx-fade-left' ></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </section>
+
+    <!-- Coming Section -->
+    <section class="coming" id="cinemas">
+        <h2 class="heading">Cinemas</h2>
+        <!-- Coming Container -->
+        <div class="coming-container swiper">
+            <div class="swiper-wrapper">
+                <!-- Box 1 -->
+        <% @cinemas.each do |cinema| %>
+                <div class="swiper-slide box" onclick="redirect(<%= cinema.id %>)">
+                        <div class="box-img">
+                                <%= image_tag cinema.image%>
+                        </div>
+                <h3> <%= cinema.name %> </h3>
+                </div>
+        <%end%>   
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter" id="newsletter">
+        <h2>Subscribe To Get <br>Newsletter</h2>
+        <form action="">
+            <input type="email" class="email" placeholder=" Enter Email..." required>
+            <input type="submit" value="Subscribe" class="btn">
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+        <a href="#" class="logo">
+            <i class='bx bxs-movie'></i> Movies
+        </a>
+        <div class="social">
+            <a href="#"><i class='bx bxl-facebook' ></i></a>
+            <a href="#"><i class='bx bxl-twitter' ></i></a>
+            <a href="#"><i class='bx bxl-instagram' ></i></a>
+        </div>
+    </section>
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <p>&#169; Popcornflix All Right Reserved.</p>
+    </div>
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<%= javascript_pack_tag 'main' %>

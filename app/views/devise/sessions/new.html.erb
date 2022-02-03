@@ -1,0 +1,28 @@
+<%= stylesheet_link_tag "form" %>
+  <section>
+        <div class="container">
+  <div class="user signinBox">
+                <!-- IMAGE BOX -->
+                <div class="imgBox">
+                    <%= image_tag "signin.jpg"%>
+                </div>
+                <!-- FORM BOX -->
+                <div class="formBox">
+                
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                    <h2>Sign In</h2>
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email" , placeholder: "Email Address" %>
+              
+                    <%= f.password_field :password, autocomplete: "current-password" , placeholder: "Password" %>
+
+                  
+                    <%= f.submit "Log in" %>
+                  
+                  <p class="signup">Don't have an account ? <%= link_to "Sign Up", new_user_registration_path %> </p>
+                <% end %>
+                  
+                </div>
+            </div>
+          </div>
+    </section>
+

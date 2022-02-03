@@ -1,0 +1,237 @@
+<%= stylesheet_link_tag "style" %>
+
+
+  <header>
+        <a href="#" class="logo">
+            <i class='bx bx-movie'></i>
+            Popcornflix
+        </a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <!-- Menu -->
+        <ul class="navbar">
+            <li>
+                <a href="#home" class="active">Home</a>
+            </li>
+            <li>
+                <a href="#movies">Movies</a>
+            </li>
+            <li>
+                <a href="#coming">Coming</a>
+            </li>
+        </ul>
+        <% if user_signed_in?%>
+        <%= link_to "Logout" , destroy_user_session_path , class: "btn" , method: :delete %> 
+        <% else %>
+        <%= link_to "Sign In" , new_user_session_path , class: "btn" %> 
+        <% end %>
+    </header>
+
+    <!-- Home -->
+    <section class="home swiper" id="home">
+        <div class="swiper-wrapper">
+            <!-- BOX 1  -->
+            <div class="swiper-slide container">
+                <%= image_tag "home1.jpg" %>
+                <div class="home-text">
+                    <span> <%= @cinema.name%> </span>
+                    <h1>
+                        Venom: Let there <br> Be Carnage
+                    </h1>
+                    <a href="#" class="btn">Book Now</a>
+                    <a href="#" class="play">
+                        <i class='bx bx-play bx-fade-left' ></i>
+                    </a>
+                </div>
+            </div>
+            <!-- BOX 2 -->
+            <div class="swiper-slide container">
+                  <%= image_tag "home2.jpg" %>
+                <div class="home-text">
+                    <span><%= @cinema.name%></span>
+                    <h1>
+                        Avengers: <br> Infinity War
+                    </h1>
+                    <a href="#" class="btn">Book Now</a>
+                    <a href="#" class="play">
+                        <i class='bx bx-play bx-fade-left' ></i>
+                    </a>
+                </div>
+            </div>
+            <!-- BOX 3 -->
+            <div class="swiper-slide container">
+                  <%= image_tag "home3.jpg" %>
+                <div class="home-text">
+                    <span><%= @cinema.name%></span>
+                    <h1>
+                        Spider-Man: <br> Far From Home
+                    </h1>
+                    <a href="#" class="btn">Book Now</a>
+                    <a href="#" class="play">
+                        <i class='bx bx-play bx-fade-left' ></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </section>
+
+    <!-- Movies Section -->
+    <section class="movies" id="movies">
+        <h2 class="heading">Opening This Week</h2>
+        <!-- Movies Container -->
+        <div class="movies-container">
+            <!-- Box 1 -->
+            <% @cinema.movies.each do |movie| %>
+            <div class="box">
+                <div class="box-img">
+                    <%= image_tag movie.image%>
+                </div>
+                <h3><i><%= movie.name %></i></h3>
+                <span>120 min | Action</span>
+                <div class="times">
+                 <% movie.shows.each do |show| %>
+                    <% if show.cinema_id == @cinema.id %>
+                        <a class="time" href="/seats/new/<%= show.id  %>">
+                        <%= "#{show.time.day} #{ Date::MONTHNAMES[show.time.month]} ,
+                        #{show.getStringTime(show.time.hour)}"  %>
+                        </a>
+                    <% end %>  
+                  <% end %>
+    
+             
+                </div>
+            </div>
+            <%end%>
+            
+
+
+
+            
+    
+        </div>
+    </section>
+
+    <!-- Coming Section -->
+    <section class="coming" id="coming">
+        <h2 class="heading">Coming Soon</h2>
+        <!-- Coming Container -->
+        <div class="coming-container swiper">
+            <div class="swiper-wrapper">
+                <!-- Box 1 -->
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                        <%= image_tag "coming1.jpg"%>
+                    </div>
+                    <h3>Jhony English</h3>
+                    <span>120 min | Action</span>
+                </div>
+                <!-- Box 2 -->
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                    <%= image_tag "coming2.jpg"%>
+
+                    </div>
+                    <h3>Warcraft</h3>
+                    <span>120 min | Adventure</span>
+                </div>
+                <!-- Box 3 -->
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                      <%= image_tag "coming3.jpg"%>
+
+                    </div>
+                    <h3>Rampage</h3>
+                    <span>120 min | Thriller</span>
+                </div>
+                <!-- Box 4 -->
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                        <%= image_tag "coming4.jpg"%>
+                      
+                    </div>
+                    <h3>Iron Lady</h3>
+                    <span>120 min | Adventure</span>
+                </div>
+                <!-- Box 5 -->
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                        <%= image_tag "coming5.jpg"%>
+
+                    </div>
+                    <h3>Justice League</h3>
+                    <span>120 min | Action</span>
+                </div>
+                <!-- Box 6 -->
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                        <%= image_tag "coming6.jpg"%>
+
+                    </div>
+                    <h3>Doctor Strange</h3>
+                    <span>120 min | Thriller</span>
+                </div>
+                <!-- Box 7 -->
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                        <%= image_tag "coming7.jpg"%>
+                        
+                    </div>
+                    <h3>Captain Marvel</h3>
+                    <span>120 min | Adventure</span>
+                </div>
+                <!-- Box 8 -->
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                      <%= image_tag "coming8.jpg"%>
+
+                    </div>
+                    <h3>Black Widow</h3>
+                    <span>120 min | Thriller</span>
+                </div>
+                <!-- Box 9 -->
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                        <%= image_tag "coming9.jpg"%>
+
+                    </div>
+                    <h3>Ant-Man</h3>
+                    <span>120 min | Action</span>
+                </div>
+                <!-- Box 10 -->
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                      <%= image_tag "coming10.jpg"%>
+
+                    </div>
+                    <h3>Guardians of the  Galaxy</h3>
+                    <span>120 min | Thriller</span>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+        <a href="#" class="logo">
+            <i class='bx bxs-movie'></i> Movies
+        </a>
+        <div class="social">
+            <a href="#"><i class='bx bxl-facebook' ></i></a>
+            <a href="#"><i class='bx bxl-twitter' ></i></a>
+            <a href="#"><i class='bx bxl-instagram' ></i></a>
+        </div>
+    </section>
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <p>&#169; Popcornflix All Right Reserved.</p>
+    </div>
+
+<p>
+
+
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<%= javascript_pack_tag 'main' %>
