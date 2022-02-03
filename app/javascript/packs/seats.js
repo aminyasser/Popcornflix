@@ -13,7 +13,7 @@ var occ = container.dataset.occ;
 var your = container.dataset.your;
 occ =JSON.parse(occ)
 your =JSON.parse(your)
-console.log(your);
+// console.log(your);
 
 // console.log(occ);
 // array to add occuiped class for the seats come from database
@@ -43,28 +43,29 @@ container.addEventListener('click', function(e) {
    if (
      e.target.classList.contains('seat') &&
      !e.target.classList.contains('occupied')
+     && !e.target.classList.contains('yours')
    ) {
 
     
       
       
-     e.target.classList.toggle('selected');
-     book.disabled = false;
-     
-
-     var index=0;
+    e.target.classList.toggle('selected');
+    
+    var index=0;
      seats.forEach( function fun(element) {
       if (element.classList.contains('selected'))
          index++;
       }  
-      
-      
       );
-      if(index == 0)
-         book.disabled = true;
+  
  
      updateSelectedCount();
+      if(index > 0)
+         book.disabled = false;
+      else book.disabled = true;
+      index = 0;
    }
+   
  });
 
 

@@ -26,13 +26,15 @@
     
    
         <%= form.hidden_field :show_id , value: @show.id %>
-
-        </div>
-        </div>
-    <span class="seat-final-span d-inline-block mt-2">You have selected 
+    <div class="span-wid">
+         <span class="seat-final-span d-inline-block mt-2">You have selected 
     <span id="num" class="seat-price"> 0 seats </span>
-    with <span id="price" class="seat-price"> 0 LE</span>  price </span>
+    with <span id="price" class="seat-price"> 0 LE</span>  price
+    </span>
+    </div>
+
     <p class='py-5'>
     <%= form.submit "Book Ticket Now!" ,id: "book" , class: 'header-btn btn-seat' %>
+    
     </p>
 <% end %>

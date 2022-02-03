@@ -21,7 +21,7 @@
                             <div class="col-md-3">
                                     <div class="mb-2 text-center">
 
-                                <%# <img class="show-img " src="assets/img/movies/<?php echo $movie->img; ?> " alt=""> %>
+                                
                                 <h2 class="show-title"> <%= @show.movie.name %> Movie</h2>
                                 <span class="show-span"> <%= @show.cinema.name %> </span>
                                     </div>
@@ -56,12 +56,14 @@
                                         <div class="row">
                                         <%# row and seats-con end inside the form %>
                                         <%= render 'seatsForm', seat: @seat %>
+                                         </div>
+                                       </div>
                                         </div>
                             </div>
                             
                         </div>
             </div>
-
+</div>
 
 
 
@@ -71,6 +73,3 @@
 <%= javascript_tag "var obj = #{@occ.to_json}"%>
 <%= javascript_pack_tag 'seats' %>
 
-      <script>
-          
-      </script>

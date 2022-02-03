@@ -1049,4 +1049,7 @@ body {
   overflow: auto;
 }
 
+.span-wid {
+  width: 110%;
+}
 
