@@ -6,9 +6,9 @@ class CinemasController < ApplicationController
   def index
     @cinemas = Cinema.all
   end
-  # GET /cinema/all
+  # GET /
   def all
-    @cinemas = Cinema.all
+    @cinemas = Cinema.all.includes(image_attachment: :blob)
   end
 
   # GET /cinemas/1
@@ -18,6 +18,7 @@ class CinemasController < ApplicationController
   # GET /cinema/1
   def view
     @cinema = Cinema.find(params[:id])
+    @movies = @cinema.movies.includes(image_attachment: :blob)
   end
 
   # GET /cinemas/new

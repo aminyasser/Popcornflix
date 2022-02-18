@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show edit create update destroy ]
   before_action :authenticate_user!
-  before_action :is_admin? 
+  before_action :set_user, only: %i[ show edit create update destroy  ]
+  before_action :is_admin? ,except: :profile
   # GET /users or /users.json
   def index
     @users = User.all
@@ -56,6 +56,11 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url, notice: "User was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def profile
+    @user = current_user
+    @seats = @user.seats.where(show_id: 3)
   end
 
   private

@@ -82,7 +82,7 @@
         <!-- Movies Container -->
         <div class="movies-container">
             <!-- Box 1 -->
-            <% @cinema.movies.each do |movie| %>
+            <% @movies.includes(:shows).each do |movie| %>
             <div class="box">
                 <div class="box-img">
                     <%= image_tag movie.image%>
@@ -90,16 +90,14 @@
                 <h3><i><%= movie.name %></i></h3>
                 <span>120 min | Action</span>
                 <div class="times">
-                 <% movie.shows.each do |show| %>
+                <% movie.shows.each do |show| %>
                     <% if show.cinema_id == @cinema.id %>
                         <a class="time" href="/seats/new/<%= show.id  %>">
                         <%= "#{show.time.day} #{ Date::MONTHNAMES[show.time.month]} ,
                         #{show.getStringTime(show.time.hour)}"  %>
                         </a>
                     <% end %>  
-                  <% end %>
-    
-             
+                <% end %>
                 </div>
             </div>
             <%end%>
