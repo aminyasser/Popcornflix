@@ -20,31 +20,7 @@ function redirect(id) {
 <%
 =end%>
 
-  <header>
-        <a href="#" class="logo">
-            <i class='bx bx-movie'></i>
-            Popcornflix
-        </a>
-        <div class="bx bx-menu" id="menu-icon"></div>
-
-        <!-- Menu -->
-        <ul class="navbar">
-            <li>
-                <a href="#home" class="active">Home</a>
-            </li>
-            <li>
-                <a href="#cinemas">Cinemas</a>
-            </li>
-            <li>
-                <a href="#newsletter">Newsletter</a>
-            </li>
-        </ul>
-        <% if user_signed_in?%>
-        <%= link_to "Logout" , destroy_user_session_path , class: "btn" , method: :delete %> 
-        <% else %>
-        <%= link_to "Sign In" , new_user_session_path , class: "btn" %> 
-        <% end %>
-    </header>
+    <%= render partial: "shared/navbar" %>
 
     <!-- Home -->
     <section class="home swiper" id="home">

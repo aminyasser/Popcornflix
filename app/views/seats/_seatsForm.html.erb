@@ -1,5 +1,5 @@
-<%= form_with(model: seat) do |form| %>
-     <div class="col-md-12 text-center">
+<%= form_with(model: seat , :html => {:class => 'w-100'}) do |form| %>
+    <div class="col-md-12 text-center">
     <% 1.upto(12) do |i| %>
     <label  for=<%="seat#{i}"%> class="seat" name="seats[]" ></label>
     <%= check_box_tag "seat#{i}", "#{i}",false, name:"seats[]" %> 
@@ -34,7 +34,7 @@
     </div>
 
     <p class='py-5'>
-    <%= form.submit "Book Ticket Now!" ,id: "book" , class: 'header-btn btn-seat' %>
+    <%= form.submit "Book Ticket Now!" ,id: "book" , class: 'btn' %>
     
     </p>
 <% end %>

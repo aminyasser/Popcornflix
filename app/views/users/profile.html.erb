@@ -1,1 +1,76 @@
-Profile
+<%= stylesheet_link_tag "bootstrap.min" %>
+<%= stylesheet_link_tag "seats" %>
+
+
+<%= render partial: "shared/navbar" %>
+<section id="login">
+<div class="container">
+<div class="row">
+    <div class="col-md-6 ">
+        <div class="container pt-4">
+
+            <div class="user-con py-3">
+               
+                <%= image_tag "undraw_profile_pic_ic-5-t.svg" , class: "user-img"%>
+                <span style="color: aliceblue;" class="user-name">
+                    <%= @user.name%>
+                </span>
+                <div class="hlr"></div>
+            </div>
+            <div class="user-data">
+                    <div style="color: aliceblue;" class="row">
+
+                        
+                        <div class="col-md-3 text-center py-4"> <span class="user-data-item">Email</span>  </div>
+                        <div class="col-md-9 py-4 user-data-i ">
+                            <%= @user.email%>
+                        </div>
+                    
+                        <div class="col-md-12 text-center py-2"> 
+                        <span class="user-data-item">
+                            Tickets
+                        </span> 
+                        </div>
+                        <div class="tickets">
+                        <% @tickets.includes(show: [:cinema,:movie]).each do |ticket|%>
+                            
+                        <div class="col-md-12 text-center mt-2 py-1 user-data-i bg-user-booking ">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <%= ticket.show.movie.name %> 
+                                    <%= ticket.show.cinema.name %> 
+                                </div>
+                                <div class="col-md-12">
+                                   <%= ticket.show.price * @seat_count[ticket.show.id]  %> 
+                                LE | <%= @seat_count[ticket.show.id]%> seats
+                                </div>
+                            
+                            </div>
+                    
+                                
+                                
+                        </div>
+
+                 <% end %>
+
+                    </div>
+
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 ">
+            <div class="container pt-4">
+            
+
+                <%= image_tag "undraw_browsing_online_re_umsa.svg" , class: "user-left"%>
+
+                
+            </div>
+    </div>
+
+</div>
+</div>
+</section>
+
+<%= javascript_pack_tag 'main' %>

@@ -60,7 +60,8 @@ class UsersController < ApplicationController
 
   def profile
     @user = current_user
-    @seats = @user.seats.where(show_id: 3)
+    @tickets = @user.seats.group(:show_id).order(:created_at)
+    @seat_count = @tickets.count(:show_id)
   end
 
   private

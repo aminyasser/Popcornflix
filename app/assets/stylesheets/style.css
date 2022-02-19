@@ -108,7 +108,7 @@ header.shadow .logo {
     border-radius: 0.5rem;
 }
 .btn:hover {
-    background: #fa1216;
+    background: #fa1216 !important;
 }
 /* ////////////////////// End Of Navbar Styling ///////////////////////// */
 /* HOME SECTION STYLING */

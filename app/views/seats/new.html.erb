@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag "bootstrap.min" %>
 <%= stylesheet_link_tag "seats" %>
-
+<%= render partial: "shared/navbar" %>
     <section id="login">
 
             <div class="container">
@@ -72,4 +72,5 @@
 
 <%= javascript_tag "var obj = #{@occ.to_json}"%>
 <%= javascript_pack_tag 'seats' %>
+<%= javascript_pack_tag 'main' %>
 
