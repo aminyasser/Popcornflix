@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
     before_action :set_current_user
     before_action :configure_permitted_parameters , if: :devise_controller?
+    add_flash_types :success, :danger, :info
     def set_current_user
       # finds user with session data and stores it if present
       Current.user = User.find_by(id: session[:user_id]) if session[:user_id]

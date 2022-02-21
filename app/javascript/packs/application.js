@@ -12,4 +12,8 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+import '../src/application'
+import toastr from 'toastr'
+window.toastr = toastr
+
 

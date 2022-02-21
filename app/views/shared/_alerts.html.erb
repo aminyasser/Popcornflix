@@ -1,0 +1,11 @@
+
+  <div id='flash'>
+    <script>
+      <% if alert %>
+        toastr.error('<%=alert%>')
+      <% end %>
+      <% if notice %>
+        toastr.success('<%=notice%>')
+      <% end %>
+    </script>
+  </div>

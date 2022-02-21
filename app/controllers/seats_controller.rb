@@ -29,7 +29,7 @@ class SeatsController < ApplicationController
     arr = params[:seats].map { |seat_number| {number: seat_number, show_id: params[:seat][:show_id]}}
     
     if current_user.seats.create!(arr)
-      redirect_to user_cinemas_path, notice: 'Seat was successfully created.'
+      redirect_to user_cinemas_path, notice: 'You book your seat successfully'
     else
       render :new
     end

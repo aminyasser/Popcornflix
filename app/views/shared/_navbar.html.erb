@@ -18,7 +18,7 @@
             </li>
         </ul>
         <% if user_signed_in?%>
-        <%= link_to "Logout" , destroy_user_session_path , class: "btn" , method: :delete %> 
+        <%= link_to "Logout" , destroy_user_session_path , class: "btn" , method: :delete %>
         <% else %>
         <%= link_to "Sign In" , new_user_session_path , class: "btn" %> 
         <% end %>
