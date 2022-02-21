@@ -8,7 +8,7 @@
         <!-- Menu -->
         <ul class="navbar">
             <li>
-                <a href="#home" class="active">Home</a>
+                <a href="/#home" class="active">Home</a>
             </li>
             <li>
                 <a href="#cinemas">Cinemas</a>
@@ -17,9 +17,13 @@
                 <a href="#newsletter">Newsletter</a>
             </li>
         </ul>
+        <div>
         <% if user_signed_in?%>
+        <%= link_to current_user.name , profile_path , class: "profile-link"%>
         <%= link_to "Logout" , destroy_user_session_path , class: "btn" , method: :delete %>
         <% else %>
         <%= link_to "Sign In" , new_user_session_path , class: "btn" %> 
         <% end %>
+        </div>
+        
     </header>

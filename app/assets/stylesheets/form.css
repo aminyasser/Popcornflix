@@ -166,3 +166,7 @@ section .container.active .signinBox .imgBox {
         width: 100%;
     }
 }
+
+.alert li{
+    color: #ff2c1f;
+}

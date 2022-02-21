@@ -1,4 +1,7 @@
-<p id="notice"><%= notice %></p>
+<%= render partial: "shared/dashboard-head" %>
+
+
+<div class="container mt-4">
 
 <h1>Shows</h1>
 
@@ -28,6 +31,6 @@
   </tbody>
 </table>
 
-<br>
 
 <%= link_to 'New Show', new_show_path %>
+</div>

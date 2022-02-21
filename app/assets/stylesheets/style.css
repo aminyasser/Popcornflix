@@ -94,6 +94,15 @@ header.shadow .logo {
 .navbar .active::after {
     width: 100%;
 }
+.profile-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--bg-color);
+}
+
+header.shadow .profile-link {
+    color: var(--text-color);
+}
 #menu-icon {
     font-size: 24px;
     cursor: pointer;

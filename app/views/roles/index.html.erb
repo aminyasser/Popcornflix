@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<%= render partial: "shared/dashboard-head" %>
+
+<div class="container mt-4">
 
 <h1>Roles</h1>
 
@@ -22,6 +24,6 @@
   </tbody>
 </table>
 
-<br>
-
 <%= link_to 'New Role', new_role_path %>
+</div>
+

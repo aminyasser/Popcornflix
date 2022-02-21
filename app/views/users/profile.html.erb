@@ -32,6 +32,7 @@
                         </span> 
                         </div>
                         <div class="tickets">
+                        <% if @tickets.present?%>
                         <% @tickets.includes(show: [:cinema,:movie]).each do |ticket|%>
                             
                         <div class="col-md-12 text-center mt-2 py-1 user-data-i bg-user-booking ">
@@ -50,8 +51,15 @@
                                 
                                 
                         </div>
+                        <% end %>
+                        <% end %>
+                        <%if @tickets.blank? %>
+                        <div class="user-data-i text-center">
+                        No Tickets yet
+                        </div>
+                        <% end %>
 
-                 <% end %>
+
 
                     </div>
 

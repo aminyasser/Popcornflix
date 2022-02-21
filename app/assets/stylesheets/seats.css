@@ -652,3 +652,16 @@ body {
       height: 240px;
   }
 }
+.profile-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--bg-color);
+}
+.profile-link:hover {
+  color: var(--bg-color);
+
+}
+
+header.shadow .profile-link {
+  color: var(--text-color);
+}
