@@ -386,7 +386,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `role_id`, `password_digest`, `created_at`, `updated_at`, `email`, `encrypted_password`, `reset_password_token`, `reset_password_sent_at`, `remember_created_at`) VALUES
 (2, 'Amin x', 2, NULL, '2021-12-30 13:56:15.223043', '2022-02-03 11:56:07.571546', 'aminyasser8@gmail.com', '$2a$12$14fHBFIO5enUnlfmcyWIG.T/HAmhWzjgwuhbu7e1JfR9R86V668mK', NULL, NULL, NULL),
-(3, 'Amin Yasser', 1, NULL, '2021-12-30 14:32:59.965091', '2022-02-03 11:52:51.069393', 'aminyasser88@gmail.com', '$2a$12$41VUXEWGl1Eh3oiPSp62fetSigQUgSeXWs5GnDkToBL4vLvkBnuni', NULL, NULL, NULL),
+(3, 'Amin Yasser', 1, NULL, '2021-12-30 14:32:59.965091', '2022-02-03 11:52:51.069393', 'amin@example.com', '$2a$12$41VUXEWGl1Eh3oiPSp62fetSigQUgSeXWs5GnDkToBL4vLvkBnuni', NULL, NULL, NULL),
 (5, 'Amin', 2, NULL, '2021-12-30 14:57:06.330747', '2021-12-30 14:57:06.330747', 'aminyasser888@gmail.com', '$2a$12$rrXL316zHaY0RskTt3zrEe8Wuhqs0escnui8/pgkH6kQEmXa/xAlm', NULL, NULL, NULL),
 (6, '7amo', 2, NULL, '2021-12-30 14:59:41.616583', '2021-12-31 19:08:49.688367', 'ahmed@gsg.com', '$2a$12$kiTLGRHMJhqIkwYs6lAiMuZSU9YyTEvM4EN.MZqacGb7Vio8gPER6', NULL, NULL, NULL),
 (7, 'Nizay', 2, NULL, '2021-12-31 18:10:21.544974', '2021-12-31 18:10:21.544974', 'nizay@example.com', '$2a$12$guK6d2wjM.pARQv7onLTLO14R2l5T/TPk92K5giIihBkm11nqyTMC', NULL, NULL, NULL),
