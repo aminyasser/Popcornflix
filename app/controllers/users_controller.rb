@@ -60,7 +60,7 @@ class UsersController < ApplicationController
 
   def profile
     @user = current_user
-    @tickets = @user.seats.group(:show_id)
+    @tickets = @user.seats.select("show_id , max(show_id)").group(:show_id)
     @seat_count = @tickets.count(:show_id)
   end
 
