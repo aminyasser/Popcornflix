@@ -618,7 +618,7 @@ body {
       grid-template-columns: repeat(auto-fit, minmax(160px, auto));
   }
   .seats-con {
-    width: 105%;
+    width: 114%;
   }
   .showcase li {
     display: flex;
