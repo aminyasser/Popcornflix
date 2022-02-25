@@ -1,4 +1,5 @@
 <%= form_with(model: seat , :html => {:class => 'w-100'}) do |form| %>
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
     <div class="col-md-12 text-center">
     <% 1.upto(12) do |i| %>
     <label  for=<%="seat#{i}"%> class="seat" name="seats[]" ></label>
