@@ -618,7 +618,7 @@ body {
       grid-template-columns: repeat(auto-fit, minmax(160px, auto));
   }
   .seats-con {
-    width: 90%;
+    width: 95%;
   }
 }
 @media (max-width: 472px) {
