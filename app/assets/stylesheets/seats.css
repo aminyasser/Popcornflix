@@ -618,7 +618,17 @@ body {
       grid-template-columns: repeat(auto-fit, minmax(160px, auto));
   }
   .seats-con {
-    width: 95%;
+    width: 105%;
+  }
+  .showcase li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2px;
+  }
+  
+  .showcase li small {
+    margin-left: 1px;
   }
 }
 @media (max-width: 472px) {
